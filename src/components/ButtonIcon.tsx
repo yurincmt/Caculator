@@ -21,7 +21,7 @@ export function ButtonIcon({iconName}:Props) {
       {iconName === 'X' && <X size={32} weight="bold" />}
       {iconName === 'Divide' && <Divide size={32} weight="bold" />}
       {iconName === 'Equals' && <Equals size={32} weight="bold" />}
-      {iconName === 'Backspace' && <Backspace size={32} weight="bold" />}
+      {iconName === 'Backspace' && <Backspace size={32} weight="bold" color="#EF7303"/>}
       {iconName === 'Percent' && <Percent size={32} weight="bold" />}
     </TouchableOpacity>
   )

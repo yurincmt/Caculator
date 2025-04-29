@@ -1,13 +1,16 @@
 import { StyleSheet, Text, TouchableOpacity, TouchableOpacityProps } from "react-native";
 
+export const orageColor = '#EF7303';
+
 type Props = TouchableOpacityProps & {
   charText: string;
+  color?: boolean;
 }
 
-export function Button({charText, ...rest}: Props) {
+export function Button({charText, color, ...rest}: Props) {
   return (
     <TouchableOpacity style={styles.container}>
-      <Text style={styles.text}>
+      <Text style={[styles.text, color && {color: orageColor}]}>
         {charText}
       </Text>
     </TouchableOpacity>
