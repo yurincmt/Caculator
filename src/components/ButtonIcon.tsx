@@ -1,4 +1,4 @@
-import { StyleSheet, TouchableOpacity } from "react-native"
+import { StyleSheet, TouchableOpacity, TouchableOpacityProps } from "react-native"
 import {
   Plus,
   Minus,
@@ -9,13 +9,16 @@ import {
   Percent
 } from "phosphor-react-native"
 
-type Props = {
+type Props = TouchableOpacityProps & {
   iconName: string;
 }
 
-export function ButtonIcon({iconName}:Props) {
+export function ButtonIcon({iconName, ...rest}:Props) {
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity
+      style={styles.container}
+      {...rest}
+    >
       {iconName === 'Plus' && <Plus size={32} weight="bold" />}
       {iconName === 'Minus' && <Minus size={32} weight="bold" />}
       {iconName === 'X' && <X size={32} weight="bold" />}
