@@ -1,21 +1,25 @@
 import { StyleSheet, Text, TouchableOpacity, TouchableOpacityProps } from "react-native";
+import { Icon } from "./Icon";
 
-export const orageColor = '#EF7303';
+export const accentColor = '#EF7303';
 
 type Props = TouchableOpacityProps & {
-  charText: string;
-  color?: boolean;
+  iconName: string;
+  accent?: boolean;
 }
 
-export function Button({charText, color, ...rest}: Props) {
+export function Button({iconName, accent, ...rest}: Props) {
   return (
     <TouchableOpacity
       style={styles.container}
       {...rest}
     >
-      <Text style={[styles.text, color && {color: orageColor}]}>
-        {charText}
-      </Text>
+      {'0123456789C'.includes(iconName) ? 
+        <Text style={[styles.text, accent && {color: accentColor}]}>
+          {iconName}
+        </Text> :
+        <Icon name={iconName}/>
+      }
     </TouchableOpacity>
   )
 }
