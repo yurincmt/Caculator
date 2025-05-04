@@ -3,7 +3,7 @@ export function polishExpSolver(exp) {
   const stack = [];
 
   for (const token of exp.split(' ')) {
-    if (['+', '-', '*', '/'].includes(token)) {
+    if (['+', '−', '×', '÷'].includes(token)) {
       const n2 = parseFloat(stack.pop());
       const n1 = parseFloat(stack.pop());
       let eq;
@@ -11,13 +11,13 @@ export function polishExpSolver(exp) {
         case '+':
           eq = n1 + n2;
           break;
-        case '-':
+        case '−':
           eq = n1 - n2;
           break;
-        case '*':
+        case '×':
           eq = n1 * n2;
           break;
-        case '/':
+        case '÷':
           eq = n1 / n2;
           break;
       }
@@ -25,7 +25,7 @@ export function polishExpSolver(exp) {
     } else {
       stack.push(token);
     }
-    console.log(stack);
+    // console.log(stack);
   }
   return stack.at(0);
 }
@@ -35,18 +35,18 @@ export function infix2Polish(exp) {
   const polishExp = [];
 
   // for (const token of exp.split(' ')) { // spaços são delimitadores: 2 + 2 / 2 * 10
-  for (const token of exp.split(/(\+|\-|\*|\/)/)) { // não precisa de delimitadores: 2+2/2*10
-    if (['+', '-', '*', '/'].includes(token)) {
+  for (const token of exp.split(/(\+|\−|\×|\÷)/)) { // não precisa de delimitadores: 2+2/2*10
+    if (['+', '−', '×', '÷'].includes(token)) {
 
       if (stack.length > 0) {
 
-        if (['/', '*'].includes(stack.at(-1))) {
+        if (['÷', '×'].includes(stack.at(-1))) {
           while (stack.length > 0) {
             polishExp.push(stack.pop());
           }
           stack.push(token);
           
-        } else if (['/', '*'].includes(token)) {
+        } else if (['÷', '×'].includes(token)) {
           stack.push(token);
 
         } else {

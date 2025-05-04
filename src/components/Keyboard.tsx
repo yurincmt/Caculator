@@ -29,7 +29,7 @@ export function Keyboard({input, setInput}: Props) {
 
       case '=':
         const polishExp = infix2Polish(input);
-        setInput(polishExpSolver(polishExp));
+        setInput(String(polishExpSolver(polishExp)));
         break;
       
       default:
@@ -64,9 +64,9 @@ export function Keyboard({input, setInput}: Props) {
 
       <View style={styles.column}>
         <View style={styles.opColum}>
-          <Button iconName="Divide" onPress={() => handlePress('/')}/>
-          <Button iconName="X" onPress={() => handlePress('x')}/>
-          <Button iconName="Minus" onPress={() => handlePress('-')}/>
+          <Button iconName="Divide" onPress={() => handlePress('÷')}/>
+          <Button iconName="X" onPress={() => handlePress('×')}/>
+          <Button iconName="Minus" onPress={() => handlePress('−')}/>
           <Button iconName="Plus" onPress={() => handlePress('+')}/>
           <Button iconName="Equals" onPress={() => handlePress('=')}/>
         </View>
