@@ -8,8 +8,11 @@ export function Home() {
   const [keyboardInput, setKeyboardInput] = useState<string>('31337');
   return (
     <View style={style.container}>
-      <Calc currentValue="31337"/>
-      <Keyboard />
+      <Calc input={keyboardInput}/>
+      <Keyboard
+        input={keyboardInput}
+        setInput={setKeyboardInput}
+      />
     </View>
   )
 }
