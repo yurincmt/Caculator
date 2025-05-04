@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from "react-native";
 
 type Props = {
-  currentValue: string;
+  input: string;
 }
 
-export function Calc({currentValue}: Props) {
+export function Calc({input}: Props) {
   return (
     <View style={styles.container}>
       <Text style={{fontSize: 32, fontWeight: 'bold', color: '#1F1F1F'}}>
-        {currentValue}
+        {input} 
       </Text>
     </View>
   )
