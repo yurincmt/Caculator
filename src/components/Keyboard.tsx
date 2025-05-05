@@ -27,9 +27,10 @@ export function Keyboard({setLastInput, input, setInput}: Props) {
       case '=':
         setLastInput(input);
         const polishExp = infix2Polish(input);
-        setInput(String(polishExpSolver(polishExp)));
+        const polishExpResult = String(polishExpSolver(polishExp));
+        setInput(polishExpResult.slice(0,12));
         break;
-      
+
       default:
         setInput(input+buttonChar);
     }
