@@ -14,7 +14,7 @@ export function Button({iconName, accent, ...rest}: Props) {
       style={styles.container}
       {...rest}
     >
-      {'0123456789C'.includes(iconName) ? 
+      {'0123456789C.'.includes(iconName) ? 
         <Text style={[styles.text, accent && {color: accentColor}]}>
           {iconName}
         </Text> :
