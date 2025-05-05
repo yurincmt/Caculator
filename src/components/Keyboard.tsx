@@ -1,25 +1,22 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 
-import { Button } from "./Button";
 import { infix2Polish, polishExpSolver } from "../utils/polishMath";
+import { Button } from "./Button";
 
 interface Props {
+  setLastInput: (exp: string) => void;
   input: string;
   setInput: (buttonChar: string) => void;
   // setInput: React.Dispatch<React.SetStateAction<string>>;
 }
 
-export function Keyboard({input, setInput}: Props) {
+export function Keyboard({setLastInput, input, setInput}: Props) {
 
   function handlePress(buttonChar: string) {
     switch (buttonChar) {
-      // case 'number':
-      // case 'operator': 
-      //   setInput(input+buttonChar);
-      //   break;
-
       case 'clear':
+        setLastInput('');
         setInput('');
         break;
 
@@ -28,6 +25,7 @@ export function Keyboard({input, setInput}: Props) {
         break;
 
       case '=':
+        setLastInput(input);
         const polishExp = infix2Polish(input);
         setInput(String(polishExpSolver(polishExp)));
         break;
@@ -68,7 +66,9 @@ export function Keyboard({input, setInput}: Props) {
           <Button iconName="X" onPress={() => handlePress('×')}/>
           <Button iconName="Minus" onPress={() => handlePress('−')}/>
           <Button iconName="Plus" onPress={() => handlePress('+')}/>
-          <Button iconName="Equals" onPress={() => handlePress('=')}/>
+          <View style={styles.equalButton}>
+            <Button iconName="Equals" onPress={() => handlePress('=')}/>
+          </View>
         </View>
       </View>
     </View>
@@ -88,10 +88,15 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   opColum: {
-    // flex: 1,
     backgroundColor: '#F5F5F5',
     borderRadius: 18,
     width: '90%',
-    height: '100%',
+    height: '99%',
+    alignItems: 'center'
+  },
+  equalButton: {
+    flex: 1,
+    borderRadius: 18,
+    backgroundColor: '#EF7303',
   }
 })
