@@ -1,15 +1,21 @@
 import { StyleSheet, View } from "react-native";
 import { useState } from "react";
 
-import { Calc } from "../components/Calc";
 import { Keyboard } from "../components/Keyboard";
+import { Display } from "../components/Display";
 
 export function Home() {
-  const [keyboardInput, setKeyboardInput] = useState<string>('31337');
+  const [previousInput, setPreviousInput] = useState<string>('');
+  const [keyboardInput, setKeyboardInput] = useState<string>('0');
+
   return (
     <View style={style.container}>
-      <Calc input={keyboardInput}/>
+      <Display
+        lastInput={previousInput}
+        input={keyboardInput}
+        />
       <Keyboard
+        setLastInput={setPreviousInput}
         input={keyboardInput}
         setInput={setKeyboardInput}
       />
