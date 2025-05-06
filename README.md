@@ -6,7 +6,7 @@ Após acompanhar umas aulas e criar uns apps seguindo elas, decidi criar um appz
 
 Sendo limitado em prototipar interfaces bonitas, segui um protótipo feito pelo Nikolay_melnik, disponibilizado no [Figma](https://www.figma.com/design/nxPTLl9M3umJR3r3teTt7S/Daily-UI-Challenge--004.-Calculator--Community-?node-id=1-599&p=f&t=1iZunDqywSeYY9BK-0).
 
-![CalculatorThumbnail](https://github.com/user-attachments/assets/22621132-1c42-49a7-851d-9f9db540d245)
+![CalculatorThumbnail](https://github.com/user-attachments/assets/992c8548-b4a1-4c3c-9a80-ad98751c5882)
 
 > Detalhe: o app possui apenas o tema claro!
 
