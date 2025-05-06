@@ -1,6 +1,4 @@
 import { StyleSheet, Text, View } from "react-native";
-import { HistoryCalc } from "./HistoryCalc";
-import { useEffect, useState } from "react";
 
 type Props = {
   input: string;
@@ -8,18 +6,15 @@ type Props = {
 }
 
 export function Display({input, lastInput}: Props) {
-  
+
   return (
     <View style={styles.container}>
-      <HistoryCalc />
-      <View style={styles.inputContainer}>
-        <Text style={styles.lastExpText}>
-          {lastInput}
-        </Text>
-        <Text style={styles.inputText}>
-          {input} 
-        </Text>
-      </View>
+      <Text style={styles.lastExpText}>
+        {lastInput}
+      </Text>
+      <Text style={styles.inputText}>
+        {input}
+      </Text>
     </View>
   )
 }
@@ -28,17 +23,12 @@ const styles = StyleSheet.create({
   container: {
     // borderWidth: 1,
     height: '50%',
+    alignItems: 'flex-end',
+    justifyContent: 'flex-end',
 
     borderBottomWidth: 1,
     borderColor: '#CCCCCC',
     marginBottom: 8,
-  },
-  inputContainer: {
-    // borderWidth: 1,
-    height: '30%',
-
-    alignItems: 'flex-end',
-    justifyContent: 'flex-end',
   },
   lastExpText: {
     fontSize: 25,
