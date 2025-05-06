@@ -35,8 +35,14 @@ export function infix2Polish(exp) {
   const polishExp = [];
 
   // for (const token of exp.split(' ')) { // spaços são delimitadores: 2 + 2 / 2 * 10
-  for (const token of exp.split(/(\+|\−|\×|\÷)/)) { // não precisa de delimitadores: 2+2/2*10
-    if (['+', '−', '×', '÷'].includes(token)) {
+  for (const token of exp.split(/(\+|\−|\×|\÷|%)/).filter(item => item !== '')) { // não precisa de delimitadores: 2+2/2*10
+    if (['+', '−', '×', '÷', '%'].includes(token)) {
+
+      if (token === '%') {
+        polishExp.push('100');
+        polishExp.push('÷');
+        continue;
+      }
 
       if (stack.length > 0) {
 
