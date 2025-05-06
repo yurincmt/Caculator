@@ -1,5 +1,8 @@
 # Calculator
 
+![Appnail](https://github.com/user-attachments/assets/3cc3cd5f-eb25-42a1-9301-c329fb114d11)
+
+
 Projetinho humilde para testar o aprendizado em React Native.
 
 Após acompanhar umas aulas e criar uns apps seguindo elas, decidi criar um appzinho básico para ver se conseguia desenrolar sozinho. Seguindo as recomendações de projetos para iniciantes do site [InterviewbBit](https://www.interviewbit.com/blog/react-native-projects/), decidi fazer uma calculadora hehehe ;)
