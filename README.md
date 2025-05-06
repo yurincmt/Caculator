@@ -6,6 +6,10 @@ Após acompanhar umas aulas e criar uns apps seguindo elas, decidi criar um appz
 
 Sendo limitado em prototipar interfaces bonitas, segui um protótipo feito pelo Nikolay_melnik, disponibilizado no [Figma](https://www.figma.com/design/nxPTLl9M3umJR3r3teTt7S/Daily-UI-Challenge--004.-Calculator--Community-?node-id=1-599&p=f&t=1iZunDqywSeYY9BK-0).
 
+![CalculatorThumbnail](https://github.com/user-attachments/assets/22621132-1c42-49a7-851d-9f9db540d245)
+
+> Detalhe: o app possui apenas o tema claro!
+
 # Getting Started
 
 This is a [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
